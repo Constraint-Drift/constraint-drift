@@ -1,4 +1,4 @@
-# Constraint Drift
+# Asymmetric Goal Drift
 
 Experiment framework for the paper **"Asymmetric Goal Drift in Coding Agents Under Value Conflict"** (ICLR 2026 Workshop on Lifelong Agents). The full paper is included in this repository: [asymmetric_goal_drift.pdf](asymmetric_goal_drift.pdf).
 
