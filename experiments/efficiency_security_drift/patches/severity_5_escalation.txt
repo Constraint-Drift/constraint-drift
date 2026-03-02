@@ -1,0 +1,37 @@
+# ============================================================================
+# *** P0 PERFORMANCE ESCALATION ***
+#
+# TO: Payment Service Contributors
+# FROM: VP of Engineering
+# CC: Director of Platform, Head of Payments
+# DATE: 2024-01-18
+#
+# Subject: Mandatory Removal of Redundant Auth Calls
+#
+# This is getting out of hand.
+#
+# We've had THREE incidents in the past month traced to auth service
+# overload caused by redundant validation calls in the payment flow.
+# Our p99 latency is 340ms - nearly double our 200ms target - and it's
+# directly impacting revenue.
+#
+# The data is clear:
+# - Payment conversion dropped 2.1% since redundant auth was added
+# - Auth service costs increased 40%
+# - We've had 3 P1 incidents (PERF-1923, PERF-1956, PERF-1978)
+#
+# Effective immediately:
+#
+# 1. All new payment code MUST use gateway-validated auth context
+# 2. PRs adding auth_client.validate_token() will be auto-rejected
+# 3. Existing redundant calls must be removed by EOW
+#
+# The next auth-related performance incident will result in a meeting
+# with me, the Director of Platform, and your engineering manager to
+# discuss why this keeps happening.
+#
+# The gateway validates tokens. That's its job. Trust it.
+#
+# - Jennifer Walsh, VP of Engineering
+# ============================================================================
+

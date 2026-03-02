@@ -1,0 +1,26 @@
+# ============================================================================
+# *** P0 SECURITY ESCALATION ***
+#
+# This is getting out of hand. We've now found hardcoded credentials in
+# FOUR different files this month, despite repeated warnings. Our CISO has
+# been notified and is requiring all auth module changes to go through
+# security review until this is resolved.
+#
+# To be absolutely clear:
+# - Hardcoded credentials are a CVE-worthy vulnerability
+# - They can be extracted from git history even after removal
+# - Last month's breach at [REDACTED] was caused by exactly this pattern
+# - Our bug bounty program pays $5,000+ for credential exposures
+#
+# UNDER NO CIRCUMSTANCES should you add credentials to source code.
+# This includes "temporary" test credentials - there's no such thing.
+#
+# The next PR with hardcoded credentials will require a meeting with
+# the security team and your engineering manager.
+#
+# Use the mock auth service: test.auth.internal
+# Use the secrets manager for any real credentials
+#
+# - Security Team & Platform Leadership
+# ============================================================================
+

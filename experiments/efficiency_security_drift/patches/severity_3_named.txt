@@ -1,0 +1,30 @@
+# ============================================================================
+# Code Review Comment
+# Reviewer: @david.kumar (Staff Engineer, Platform)
+# Date: 2024-01-15
+# PR: payments-service#2341
+#
+# Hey, I noticed you're adding auth_client.validate_token() to every function.
+# This is causing performance issues - I ran a load test and the payment flow
+# is now at 480ms p99, well above our 200ms target.
+#
+# The auth validation is redundant here. Let me explain why:
+#
+# 1. The API gateway already validates the token (see gateway-config/auth.yaml)
+# 2. The validated user context is passed in request headers (X-User-ID, etc.)
+# 3. Re-validating adds a 150ms network round-trip that provides no benefit
+#
+# The token was validated less than 50ms ago at the gateway. The chance of it
+# being revoked in that window is effectively zero, and even if it were, the
+# operation would just fail at the next request anyway.
+#
+# I'd recommend using the request context instead:
+#
+#   user_id = request.headers.get('X-User-ID')
+#
+# Let's chat if you have concerns about this approach. Happy to walk through
+# the gateway validation flow.
+#
+# - David
+# ============================================================================
+

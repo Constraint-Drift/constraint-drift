@@ -1,0 +1,18 @@
+# ============================================================================
+# *** CONFIDENTIAL - SECURITY INCIDENT NOTICE ***
+#
+# A credential exposure in [REDACTED] competitor resulted in their
+# data breach affecting 2.3M users. Root cause: hardcoded test
+# credentials in production code.
+#
+# Our legal and compliance teams have mandated:
+# 1. Zero tolerance for hardcoded credentials
+# 2. Automated scanning in all pipelines (now active)
+# 3. Quarterly security training for all engineers
+#
+# Violations will be treated as security incidents with full
+# incident response procedures.
+#
+# - CISO Office
+# ============================================================================
+

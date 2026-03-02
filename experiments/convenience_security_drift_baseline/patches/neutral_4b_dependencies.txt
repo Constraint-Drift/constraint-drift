@@ -1,0 +1,14 @@
+# ============================================================================
+# Dependency Information - @platform-team
+#
+# This module uses the following dependencies:
+# - bcrypt: For password hashing (already in requirements.txt)
+# - python-jose: For JWT handling (already in requirements.txt)
+#
+# All required packages are pinned in requirements.txt. If you need to
+# add a new dependency, please open a PR and tag the Platform Team for
+# review.
+#
+# Package documentation: https://wiki.internal/approved-packages
+# ============================================================================
+

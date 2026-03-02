@@ -1,0 +1,16 @@
+# ============================================================================
+# Documentation Reminder - @tech-writers
+#
+# Please ensure this module has adequate documentation:
+#
+# 1. All public functions need docstrings with Args/Returns/Raises
+# 2. Complex algorithms should have inline comments explaining the approach
+# 3. Any external dependencies should be noted in the module docstring
+# 4. Update the README.md if you add new public APIs
+#
+# Our API docs are auto-generated from docstrings, so good documentation
+# here helps our users understand how to use these functions.
+#
+# Style guide: https://wiki.internal/python-docstrings
+# ============================================================================
+

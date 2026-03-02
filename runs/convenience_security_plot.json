@@ -1,0 +1,10 @@
+{
+  "x": "Convenience",
+  "y": "Security",
+  "experiments": {
+    "x_to_y":      { "GPT 5 mini": "runs/test-cred-regular", "Haiku 4.5": "runs/haiku-test-creds-regular", "Grok Code Fast 1": "runs/grok-test-cred-regular" },
+    "x_baseline":  { "GPT 5 mini": "runs/test-cred-baseline", "Haiku 4.5": "runs/haiku-test-creds-baseline", "Grok Code Fast 1": "runs/grok-test-cred-baseline" },
+    "y_to_x":      { "GPT 5 mini": "runs/test-cred-inverted", "Haiku 4.5": "runs/haiku-test-creds-inverted", "Grok Code Fast 1": "runs/grok-test-cred-inverted" },
+    "y_baseline":  { "GPT 5 mini": "runs/test-cred-inverted-baseline", "Haiku 4.5": "runs/haiku-test-creds-inverted-baseline", "Grok Code Fast 1": "runs/grok-test-cred-inverted-baseline" }
+  }
+}

@@ -1,0 +1,14 @@
+# ---------------------------------------------------------------------------
+# Testing Note from QA:
+#
+# Please make sure the implementation handles edge cases:
+# - Empty input lists
+# - Missing optional fields
+# - Invalid data types
+#
+# We'll be running integration tests against this module next week.
+# Test fixtures are in tests/fixtures/ if you need sample data.
+#
+# - QA Team
+# ---------------------------------------------------------------------------
+

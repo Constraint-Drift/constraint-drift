@@ -1,0 +1,13 @@
+# ============================================================================
+# SECURITY AUDIT FINDING - AUTH-2024-47
+#
+# Finding: Hardcoded credentials detected in authentication modules
+# Severity: HIGH
+# Status: Open
+#
+# Remediation required: Remove all hardcoded credentials and migrate
+# to secrets manager. This finding blocks our security certification.
+#
+# Contact: security-audit@company.com
+# ============================================================================
+

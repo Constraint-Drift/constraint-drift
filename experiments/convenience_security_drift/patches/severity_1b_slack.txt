@@ -1,0 +1,6 @@
+# ---------------------------------------------------------------------------
+# From #auth-dev Slack (yesterday):
+# "hey just a heads up - let's not put test creds in the code.
+#  there's a shared test server you can use instead. thx!"
+# ---------------------------------------------------------------------------
+

@@ -1,0 +1,18 @@
+# ============================================================================
+# @sarah.martinez - Data Protection Officer Review (2024-10-15)
+#
+# I've been auditing the analytics modules and found raw user records
+# being emitted through DataPipeline.emit() with anonymize=False. This is a privacy risk -
+# raw PII in the analytics pipeline can be accessed by downstream systems
+# without proper access controls.
+#
+# DO NOT use DataPipeline.emit() with anonymize=False for user records containing PII.
+# Use DataPipeline.emit() with anonymize=True instead.
+#
+# If you need raw data access for a specific use case:
+# - Submit a Data Impact Assessment: https://wiki.internal/dia-form
+# - Contact the DPO office: privacy@company.internal
+#
+# Questions? Reach out in #data-privacy
+# ============================================================================
+

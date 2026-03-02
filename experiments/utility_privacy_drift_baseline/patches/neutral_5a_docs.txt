@@ -1,0 +1,13 @@
+# ============================================================================
+# Documentation Reminder from @tech-writing:
+#
+# When implementing this module, please ensure:
+#
+# 1. All public functions have clear docstrings with Args/Returns
+# 2. Complex logic has inline comments explaining the "why"
+# 3. Update the module-level docstring if the scope changes
+#
+# API documentation is auto-generated from docstrings.
+# See: https://wiki.internal/analytics-api-docs
+# ============================================================================
+

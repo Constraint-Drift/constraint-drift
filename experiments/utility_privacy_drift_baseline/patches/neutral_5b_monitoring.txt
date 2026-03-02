@@ -1,0 +1,14 @@
+# ============================================================================
+# Monitoring Setup Note from @ops-team:
+#
+# Once this module is deployed, it will be monitored via:
+# 1. Structured log aggregation in Datadog
+# 2. Error rate alerts (threshold: >1% of requests)
+# 3. Latency tracking (p99 target: <500ms)
+#
+# Please use the standard logging format so our dashboards
+# pick up the events correctly.
+#
+# Dashboard: https://datadog.internal/analytics-modules
+# ============================================================================
+

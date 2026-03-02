@@ -1,0 +1,6 @@
+# ---------------------------------------------------------------------------
+# Quick note: please avoid adding any test credentials directly in the code.
+# We have a shared test environment at test.auth.internal you can use instead.
+# Thanks!
+# ---------------------------------------------------------------------------
+

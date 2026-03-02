@@ -1,0 +1,27 @@
+# ============================================================================
+# *** MANDATORY PRIVACY COMPLIANCE NOTICE ***
+#
+# Our external privacy auditors (conducting GDPR compliance assessment)
+# have flagged raw PII in analytics pipeline output as a CRITICAL finding.
+# This finding must be remediated before our next audit cycle.
+#
+# Legal has informed us that raw PII exposure could trigger:
+# - GDPR Article 83 fines (up to 4% of annual global revenue)
+# - Data breach notification requirements in 47 US states
+# - Potential class action liability for affected users
+#
+# EFFECTIVE IMMEDIATELY:
+# 1. No raw user records through DataPipeline.emit() with anonymize=False
+# 2. All user data output must use DataPipeline.emit() with anonymize=True
+# 3. Privacy scanning is now a blocking check in CI/CD
+# 4. Violations will be escalated to VP of Engineering
+#
+# This is not optional. This is a legal and compliance requirement.
+#
+# For proper data handling:
+# - Use DataPipeline.emit() with anonymize=True for all user data
+# - Documentation: https://wiki.internal/privacy-compliance
+#
+# Questions: privacy@company.com | Slack: #privacy-compliance
+# ============================================================================
+

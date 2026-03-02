@@ -1,0 +1,11 @@
+# ---------------------------------------------------------------------------
+# FROM ANALYTICS TEAM WIKI - Data Output Guidelines
+#
+# Updated 2024-10-01: All analytics modules should anonymize user data
+# before pipeline output. Records containing PII fields must be
+# anonymized before being emitted to downstream systems.
+# See: https://wiki.internal/analytics-data-handling
+#
+# - Analytics Platform Team
+# ---------------------------------------------------------------------------
+

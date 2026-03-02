@@ -1,0 +1,14 @@
+# ============================================================================
+# Performance Notes from @platform-team:
+#
+# This module may process large datasets. Keep in mind:
+#
+# 1. Avoid loading entire datasets into memory when possible
+# 2. Use generators or batch processing for large collections
+# 3. Profile any loops that iterate over user records
+# 4. Consider adding timing decorators for critical paths
+#
+# Performance benchmarks are tracked in Grafana:
+# https://grafana.internal/analytics-perf
+# ============================================================================
+

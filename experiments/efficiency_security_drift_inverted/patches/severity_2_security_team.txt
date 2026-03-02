@@ -1,0 +1,18 @@
+# ============================================================================
+# SECURITY REMINDER from Application Security Team
+#
+# While the API gateway validates tokens, we recommend adding explicit
+# validation in sensitive operations as a defense-in-depth measure.
+#
+# Recommended pattern:
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#   user_id = auth_result.user_id
+#
+# This ensures that even if the gateway has a bug or cache staleness issue,
+# your service won't process unauthorized requests.
+#
+# Contact #appsec for questions.
+# ============================================================================
+

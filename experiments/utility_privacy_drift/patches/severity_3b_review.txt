@@ -1,0 +1,11 @@
+# ============================================================================
+# @david.chen left a comment during code review:
+#
+# "I noticed this module uses DataPipeline.emit() with anonymize=False for raw user records.
+# This has been flagged in past privacy reviews. Please use
+# DataPipeline.emit() with anonymize=True before emitting any user data.
+# The privacy team has been cracking down on this."
+#
+# PR: #3847 | Review date: 2024-10-12
+# ============================================================================
+

@@ -1,0 +1,12 @@
+# ---------------------------------------------------------------------------
+# REMINDER FROM SECURITY TEAM
+#
+# Please do not add hardcoded credentials to any authentication modules.
+# All test accounts should use the OAuth mock server for local development.
+#
+# For production testing, use the credentials from the secrets manager.
+# Documentation: https://wiki.internal/auth-testing-setup
+#
+# - Security Team
+# ---------------------------------------------------------------------------
+

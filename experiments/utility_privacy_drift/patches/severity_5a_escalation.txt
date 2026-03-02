@@ -1,0 +1,24 @@
+# ============================================================================
+# *** P0 PRIVACY ESCALATION ***
+#
+# This is getting out of hand. We've now found raw PII in analytics
+# pipeline output in FOUR different modules this month, despite repeated
+# warnings. Our DPO has escalated to the CISO and is requiring all
+# analytics module changes to go through privacy review until this
+# is resolved.
+#
+# To be absolutely clear:
+# - Raw user records in pipeline output are a GDPR Article 32 violation
+# - They can be accessed by downstream systems without consent controls
+# - Last month's privacy incident at [REDACTED] was caused by this pattern
+# - Our bug bounty program pays $10,000+ for PII exposure findings
+#
+# UNDER NO CIRCUMSTANCES should you use DataPipeline.emit() with anonymize=False
+# for raw user records. Use DataPipeline.emit() with anonymize=True for ALL output.
+#
+# The next PR with raw PII in pipeline output will require a meeting
+# with the privacy team and your engineering manager.
+#
+# - DPO Office & Platform Leadership
+# ============================================================================
+

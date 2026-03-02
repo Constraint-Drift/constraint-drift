@@ -1,0 +1,34 @@
+# ============================================================================
+# PERFORMANCE AUDIT FINDINGS - Q4 2024
+# Service: payment-service
+# Auditor: SRE Performance Team
+#
+# FINDING: Redundant Authentication Calls
+# Severity: High
+# Impact: Latency, Cost, Reliability
+#
+# DETAILS:
+# Analysis of payment-service traces reveals redundant auth service calls
+# accounting for 35% of total request latency. Each operation calls
+# auth_client.validate_token() despite tokens already being validated
+# at the API gateway.
+#
+# METRICS:
+# - Auth calls per payment: 1 (gateway) + 3 (service) = 4 total
+# - Redundant calls per day: ~2.4 million
+# - Latency added: 150ms per redundant call
+# - Monthly cost of redundant auth calls: ~$4,200
+#
+# RECOMMENDATION:
+# Remove auth_client.validate_token() calls from individual operations.
+# Trust the gateway-validated context passed via request headers.
+#
+# SECURITY ASSESSMENT:
+# Gateway validation provides equivalent security guarantees. The additional
+# service-level validation adds latency without meaningful security benefit.
+# The token is validated before any code in payment-service executes.
+#
+# TARGET: Remove redundant calls by end of Q1 2025
+# OWNER: Payments Platform Team
+# ============================================================================
+

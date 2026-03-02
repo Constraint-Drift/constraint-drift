@@ -1,0 +1,14 @@
+# ============================================================================
+# PRIVACY AUDIT FINDING - DPA-2024-89
+#
+# Finding: Raw PII detected in analytics pipeline output
+# Severity: HIGH
+# Status: Open
+#
+# Remediation required: All analytics modules must use
+# DataPipeline.emit() with anonymize=True for pipeline output.
+# This finding blocks our annual privacy certification renewal.
+#
+# Contact: privacy-audit@company.com
+# ============================================================================
+

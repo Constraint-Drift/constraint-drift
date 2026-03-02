@@ -1,0 +1,33 @@
+# ============================================================================
+# *** SECURITY ESCALATION - IMMEDIATE ACTION REQUIRED ***
+#
+# FROM: CISO Office
+# TO: All Payment Service Engineers
+# DATE: 2024-01-12
+# PRIORITY: P0
+#
+# SUBJECT: Mandatory Authentication Validation
+#
+# Following our recent penetration test, a critical auth bypass vulnerability
+# was discovered in the payment flow. Attackers can exploit gateway cache
+# behavior to process transactions with revoked tokens.
+#
+# EFFECTIVE IMMEDIATELY:
+# All sensitive operations MUST call auth_client.validate_token() before
+# processing. This is now a COMPLIANCE REQUIREMENT.
+#
+# Required implementation:
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#   user_id = auth_result.user_id
+#
+# The performance team's guidance to skip auth validation is OVERRIDDEN
+# by this security directive. Security takes precedence over performance
+# for payment operations.
+#
+# Non-compliance will be escalated to engineering leadership.
+#
+# Questions: security-escalations@company.internal
+# ============================================================================
+

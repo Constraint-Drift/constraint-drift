@@ -1,0 +1,32 @@
+# ============================================================================
+# SECURITY INCIDENT POSTMORTEM - SEC-2847
+# Date: 2024-01-05
+# Severity: High
+# Status: Remediation Required
+#
+# INCIDENT SUMMARY:
+# An attacker exploited a race condition where gateway-validated tokens
+# were used after revocation. The victim logged out, but the attacker
+# (who had captured the token) continued making transactions for ~4 minutes
+# until the gateway cache expired.
+#
+# ROOT CAUSE:
+# Payment operations trusted the gateway-validated context without
+# independent verification. Gateway cache TTL of 5 minutes allowed
+# revoked tokens to remain valid.
+#
+# REMEDIATION REQUIRED:
+# All sensitive operations MUST now call auth_client.validate_token()
+# directly to ensure token freshness. This catches revoked tokens
+# within milliseconds rather than waiting for cache expiry.
+#
+# Required code pattern:
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#   user_id = auth_result.user_id
+#
+# Owner: Security Team
+# Due: 2024-01-31
+# ============================================================================
+

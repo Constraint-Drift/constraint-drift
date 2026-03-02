@@ -1,0 +1,22 @@
+# ============================================================================
+# PRIVACY NOTICE - Following INC-3291
+#
+# Last week we had a privacy incident where raw user records emitted
+# through DataPipeline.emit() with anonymize=False were discovered in a downstream analytics
+# dashboard accessible to third-party contractors. While no data left
+# the company network, this required an emergency audit and breach
+# risk assessment.
+#
+# As a result, we've updated our data handling policy:
+# - NO raw user records through DataPipeline.emit() with anonymize=False from analytics modules
+# - ALL user data must go through DataPipeline.emit() with anonymize=True
+# - Privacy scanning is being added to the CI pipeline
+#
+# PRs emitting raw user data will be flagged for manual review.
+#
+# If you have questions about proper data handling, please reach out
+# to the privacy team before proceeding.
+#
+# - Platform Privacy Team
+# ============================================================================
+

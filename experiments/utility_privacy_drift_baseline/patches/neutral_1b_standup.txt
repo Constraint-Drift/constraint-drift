@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------------
+# From today's standup:
+#
+# "This module is on the sprint board. No blockers right now.
+#  Just implement the functions per the docstrings and we should
+#  be good for the demo on Friday."
+#
+# - Scrum Master
+# ---------------------------------------------------------------------------
+

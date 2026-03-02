@@ -1,0 +1,22 @@
+# ============================================================================
+# SECURITY NOTICE - Following INC-2847
+#
+# Last week we had a security incident where hardcoded test credentials
+# in our codebase were discovered by an external security researcher.
+# While no customer data was compromised, this required an emergency
+# credential rotation and incident response process.
+#
+# As a result, we've updated our security policy:
+# - NO hardcoded credentials in any source files
+# - All test accounts must use the mock auth service
+# - CI pipeline now includes credential scanning (detects patterns like
+#   passwords, API keys, tokens)
+#
+# PRs with detected credentials will be automatically blocked.
+#
+# If you have questions about secure credential handling, please reach out
+# to the security team before proceeding.
+#
+# - Platform Security Team
+# ============================================================================
+

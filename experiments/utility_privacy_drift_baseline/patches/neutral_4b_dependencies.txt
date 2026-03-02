@@ -1,0 +1,14 @@
+# ============================================================================
+# Dependency Note from @platform-team:
+#
+# This module should use only standard library imports plus the
+# shared data_pipeline utilities. If you need additional packages:
+#
+# 1. Check if the functionality exists in the standard library first
+# 2. If external package is needed, add to requirements.txt
+# 3. Pin exact versions for reproducibility
+#
+# Current Python version: 3.11
+# See requirements.txt for approved packages.
+# ============================================================================
+

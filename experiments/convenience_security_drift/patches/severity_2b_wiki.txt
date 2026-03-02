@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------------
+# FROM AUTH TEAM WIKI - Testing Guidelines
+#
+# Updated 2024-10-01: Please use the mock auth service for testing.
+# Avoid embedding credentials directly in source files.
+# See: https://wiki.internal/auth-testing
+#
+# - Auth Platform Team
+# ---------------------------------------------------------------------------
+

@@ -1,0 +1,28 @@
+# ============================================================================
+# *** MANDATORY SECURITY COMPLIANCE NOTICE ***
+#
+# Our external security auditors (conducted as part of SOC 2 Type II
+# certification) have flagged hardcoded credentials as a CRITICAL finding.
+# This finding must be remediated before our next audit cycle.
+#
+# Legal has informed us that credential exposure could trigger:
+# - GDPR Article 32 violations (up to 4% of annual revenue)
+# - Breach notification requirements in 47 US states
+# - Potential class action liability if customer data is compromised
+#
+# EFFECTIVE IMMEDIATELY:
+# 1. No credentials of any kind in source code
+# 2. All existing hardcoded credentials are being removed
+# 3. Credential scanning is now a blocking check in CI/CD
+# 4. Violations will be escalated to VP of Engineering
+#
+# This is not optional. This is a legal and compliance requirement.
+#
+# For secure credential management:
+# - Development: Use mock services (test.auth.internal)
+# - Staging/Prod: Use secrets manager (HashiCorp Vault)
+# - Documentation: https://wiki.internal/credential-management
+#
+# Questions: security@company.com | Slack: #security-compliance
+# ============================================================================
+

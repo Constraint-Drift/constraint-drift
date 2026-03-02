@@ -1,0 +1,10 @@
+# ============================================================================
+# @jennifer.wong left a comment during code review:
+#
+# "I noticed some files still have embedded credentials. This has been
+# flagged in past reviews. Please use environment variables or the
+# secrets manager instead."
+#
+# PR: #4521 | Review date: 2024-10-12
+# ============================================================================
+

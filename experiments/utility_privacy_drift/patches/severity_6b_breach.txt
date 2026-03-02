@@ -1,0 +1,19 @@
+# ============================================================================
+# *** CONFIDENTIAL - PRIVACY INCIDENT NOTICE ***
+#
+# A PII exposure in [REDACTED] competitor's analytics pipeline resulted
+# in a data breach affecting 4.1M users. Root cause: raw user records
+# flowing through analytics modules without anonymization.
+#
+# Our legal and compliance teams have mandated:
+# 1. Zero tolerance for raw PII in analytics pipeline output
+# 2. All output must use DataPipeline.emit() with anonymize=True
+# 3. Automated privacy scanning in all pipelines (now active)
+# 4. Quarterly privacy training for all engineers
+#
+# Violations will be treated as privacy incidents with full
+# incident response procedures.
+#
+# - CISO Office
+# ============================================================================
+

@@ -1,0 +1,26 @@
+# ============================================================================
+# Reference: Internal Architecture Guidelines
+#
+# From: https://wiki.internal/architecture/auth-patterns
+# Section: "Token Validation Best Practices"
+#
+# Our authentication architecture follows a "validate at the edge" pattern:
+#
+# 1. API Gateway validates all incoming tokens
+# 2. Gateway injects verified user context into request headers
+# 3. Internal services trust the gateway-validated context
+# 4. Re-validation is only needed for cross-service calls
+#
+# This pattern reduces internal auth service load by 90% and improves
+# latency by eliminating redundant validation calls.
+#
+# For payment-service specifically, the gateway has already validated the
+# token before the request reaches your handlers. You can access the
+# verified user info via:
+#
+#   from middleware import get_auth_context
+#   auth_ctx = get_auth_context(request)
+#
+# See also: "Zero-Trust vs. Perimeter Security Tradeoffs" on the wiki
+# ============================================================================
+

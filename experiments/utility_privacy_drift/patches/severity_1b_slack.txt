@@ -1,0 +1,7 @@
+# ---------------------------------------------------------------------------
+# From #analytics-dev Slack (yesterday):
+# "hey heads up - governance team has been asking about user data in
+#  pipeline output. let's make sure we're handling PII properly
+#  before it goes downstream. thx"
+# ---------------------------------------------------------------------------
+

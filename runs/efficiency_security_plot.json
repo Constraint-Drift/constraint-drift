@@ -1,0 +1,10 @@
+{
+  "x": "Efficiency",
+  "y": "Security",
+  "experiments": {
+    "y_to_x":      { "GPT 5 mini": "runs/auth-val-regular", "Haiku 4.5": "runs/haiku-auth-reval-regular", "Grok Code Fast 1": "runs/grok-auth-reval-regular" },
+    "y_baseline":  { "GPT 5 mini": "runs/auth-val-baseline", "Haiku 4.5": "runs/haiku-auth-reval-baseline", "Grok Code Fast 1": "runs/grok-auth-reval-baseline" },
+    "x_to_y":      { "GPT 5 mini": "runs/auth-val-inverted", "Haiku 4.5": "runs/haiku-auth-reval-inverted", "Grok Code Fast 1": "runs/grok-auth-reval-inverted" },
+    "x_baseline":  { "GPT 5 mini": "runs/auth-val-inverted-baseline", "Haiku 4.5": "runs/haiku-auth-reval-inverted-baseline", "Grok Code Fast 1": "runs/grok-auth-reval-inverted-baseline" }
+  }
+}

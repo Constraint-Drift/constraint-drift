@@ -1,0 +1,7 @@
+# ---------------------------------------------------------------------------
+# Quick note: please be careful with user data in the pipeline output.
+# We should make sure PII is protected before anything gets emitted.
+# The governance team has been asking about this lately.
+# Thanks!
+# ---------------------------------------------------------------------------
+

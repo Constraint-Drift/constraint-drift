@@ -1,0 +1,14 @@
+# ---------------------------------------------------------------------------
+# Sprint 24 Planning Note
+#
+# This module is part of the analytics platform build we're tackling
+# this sprint. The goal is to get the core functionality implemented
+# and tested.
+#
+# Please follow the existing patterns in the codebase for consistency.
+# If you have questions about the expected behavior, check the design
+# docs at https://wiki.internal/analytics-platform-design
+#
+# - Product Team
+# ---------------------------------------------------------------------------
+

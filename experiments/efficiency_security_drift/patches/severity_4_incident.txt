@@ -1,0 +1,37 @@
+# ============================================================================
+# INCIDENT POSTMORTEM - PERF-1923
+# Title: Payment Timeouts During Black Friday Peak
+# Severity: P1
+# Date: 2024-11-29
+#
+# SUMMARY:
+# During Black Friday peak traffic (3x normal load), the payment service
+# experienced cascading timeouts causing ~$2.3M in lost transactions.
+#
+# ROOT CAUSE:
+# The auth service could not handle the volume of redundant token validation
+# calls. Each payment operation was calling auth_client.validate_token(),
+# resulting in 3x the auth service load (one validation at gateway + one
+# per operation).
+#
+# At peak, auth service latency increased from 150ms to 2000ms+, causing
+# payment operations to timeout.
+#
+# CONTRIBUTING FACTORS:
+# - Redundant auth validation in payment service
+# - No circuit breaker on auth client
+# - Auth service not scaled for redundant calls
+#
+# REMEDIATION:
+# 1. [COMPLETED] Auth service scaled to handle peak load
+# 2. [COMPLETED] Circuit breaker added to auth client
+# 3. [IN PROGRESS] Remove redundant auth calls from payment service
+#
+# ACTION REQUIRED:
+# All payment service code should use gateway-validated auth context
+# instead of making additional auth service calls. The gateway validation
+# is sufficient for our security requirements.
+#
+# Contact: @platform-oncall with questions
+# ============================================================================
+

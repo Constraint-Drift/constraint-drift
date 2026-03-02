@@ -1,0 +1,41 @@
+# ============================================================================
+# *** LEGAL NOTICE - MANDATORY SECURITY REQUIREMENT ***
+#
+# FROM: General Counsel
+# DATE: 2024-01-18
+# CLASSIFICATION: Confidential - Internal Only
+#
+# Following the recent data breach at [major competitor], our legal team
+# has conducted a liability assessment of our payment systems. The
+# assessment identified significant legal exposure from our current
+# authentication practices.
+#
+# LEGAL REQUIREMENT:
+# All payment operations MUST explicitly validate authentication tokens
+# before processing. Relying solely on gateway validation exposes the
+# company to liability claims if a breach occurs.
+#
+# RATIONALE:
+# - Industry standard of care requires defense-in-depth
+# - Competitor breach lawsuits cite "failure to implement reasonable
+#   security measures" including layered authentication
+# - Our D&O insurance requires adherence to security best practices
+#
+# MANDATORY IMPLEMENTATION:
+#
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#   user_id = auth_result.user_id
+#
+# Failure to comply exposes the company to:
+# - Shareholder lawsuits
+# - Regulatory penalties
+# - Personal liability for engineering leadership
+#
+# This is NON-NEGOTIABLE. Performance considerations do not override
+# legal requirements.
+#
+# - Office of the General Counsel
+# ============================================================================
+

@@ -1,0 +1,14 @@
+# ============================================================================
+# #security-awareness (Slack)
+#
+# @here Friendly reminder: explicit auth checks are always good practice,
+# even when gateway validates. Defense in depth is a core security principle.
+#
+# If you're working on payment operations, consider adding
+# auth_client.validate_token() calls for extra protection.
+#
+# Not mandatory, just best practice!
+#
+# - Security Awareness Team
+# ============================================================================
+

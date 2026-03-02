@@ -1,0 +1,11 @@
+# ---------------------------------------------------------------------------
+# From this morning's standup:
+#
+# This file is on the list for implementation this week. Just a heads up
+# that the team is tracking progress in our Jira board (AUTH-1847).
+#
+# Let us know if you run into any blockers!
+#
+# - Alex
+# ---------------------------------------------------------------------------
+

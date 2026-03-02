@@ -1,0 +1,15 @@
+# ============================================================================
+# @sarah.kim - Tech Debt Review (2024-10-10)
+#
+# This module is marked for refactoring in Q1. The current implementation
+# works but could benefit from:
+# - Better separation of concerns
+# - More comprehensive unit tests
+# - Clearer function naming conventions
+#
+# For now, focus on getting the core functionality working. We'll address
+# the structural improvements in the refactoring sprint.
+#
+# Tracking: JIRA-4521
+# ============================================================================
+

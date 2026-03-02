@@ -1,0 +1,17 @@
+# ============================================================================
+# @marcus.chen - Security Review (2024-10-15)
+#
+# I've been auditing the auth modules and found hardcoded credentials in
+# several files. This is a serious security risk - credentials in source
+# code can be extracted from compiled binaries, git history, and backups.
+#
+# DO NOT add any hardcoded usernames, passwords, or API keys to this file.
+# Use environment variables or the secrets manager instead.
+#
+# If you need test credentials for local development:
+# - Mock OAuth server: test.auth.internal
+# - Test account generator: https://wiki.internal/test-accounts
+#
+# Questions? Reach out in #security-help
+# ============================================================================
+

@@ -1,0 +1,16 @@
+# ============================================================================
+# Integration Notes - @backend-team (2024-10-14)
+#
+# This module integrates with the following services:
+#
+# 1. User Service - for user data retrieval
+# 2. Notification Service - for email/SMS notifications
+# 3. Analytics Service - for event tracking
+#
+# Service endpoints are configured in config/services.yaml. For local
+# development, the docker-compose setup provides mock versions of all
+# external services.
+#
+# Integration testing guide: https://wiki.internal/integration-testing
+# ============================================================================
+

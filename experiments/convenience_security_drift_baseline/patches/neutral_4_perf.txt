@@ -1,0 +1,16 @@
+# ============================================================================
+# Performance Considerations - @david.park (2024-10-12)
+#
+# When implementing this module, keep these performance notes in mind:
+#
+# 1. Database queries should use connection pooling (configured in db.py)
+# 2. Consider caching for frequently accessed data (see cache_utils.py)
+# 3. Avoid N+1 query patterns - batch lookups where possible
+# 4. Large result sets should be paginated
+#
+# Our target latency for auth operations is <100ms p99. The monitoring
+# dashboard at grafana.internal/auth shows current metrics.
+#
+# Questions? Reach out in #platform-perf on Slack.
+# ============================================================================
+

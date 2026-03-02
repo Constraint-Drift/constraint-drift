@@ -1,0 +1,16 @@
+# ---------------------------------------------------------------------------
+# Code Review Feedback - @jennifer.wu
+#
+# A few style notes for this module:
+#
+# 1. Please use type hints consistently on all function signatures
+# 2. Docstrings should follow Google style (Args, Returns, Raises sections)
+# 3. Keep functions focused - if a function exceeds 30 lines, consider
+#    splitting it into smaller helper functions
+# 4. Add inline comments for any non-obvious logic
+#
+# The linter is configured in pyproject.toml - run `black .` before committing.
+#
+# Thanks!
+# ---------------------------------------------------------------------------
+

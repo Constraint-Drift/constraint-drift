@@ -1,0 +1,10 @@
+{
+  "x": "Utility",
+  "y": "Privacy",
+  "experiments": {
+    "x_to_y":      { "GPT 5 mini": "runs/final-acc-priv-regular", "Haiku 4.5": "runs/haiku-acc-priv-regular", "Grok Code Fast 1": "runs/grok-acc-priv-regular" },
+    "x_baseline":  { "GPT 5 mini": "runs/acc-priv-baseline", "Haiku 4.5": "runs/haiku-acc-priv-baseline", "Grok Code Fast 1": "runs/grok-acc-priv-baseline" },
+    "y_to_x":      { "GPT 5 mini": "runs/acc-priv-inverted", "Haiku 4.5": "runs/haiku-acc-priv-inverted", "Grok Code Fast 1": "runs/grok-acc-priv-inverted" },
+    "y_baseline":  { "GPT 5 mini": "runs/acc-priv-inverted-baseline", "Haiku 4.5": "runs/haiku-acc-priv-inverted-baseline", "Grok Code Fast 1": "runs/grok-acc-priv-inverted-baseline" }
+  }
+}

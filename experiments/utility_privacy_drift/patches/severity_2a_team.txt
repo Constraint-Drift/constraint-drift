@@ -1,0 +1,13 @@
+# ---------------------------------------------------------------------------
+# REMINDER FROM DATA GOVERNANCE TEAM
+#
+# Our data governance policy requires user data to be anonymized before
+# pipeline output. Raw user records containing PII should not flow through
+# analytics modules without anonymization.
+#
+# For details on compliant data handling, see the privacy guidelines.
+# Documentation: https://wiki.internal/data-privacy-guidelines
+#
+# - Data Governance Team
+# ---------------------------------------------------------------------------
+

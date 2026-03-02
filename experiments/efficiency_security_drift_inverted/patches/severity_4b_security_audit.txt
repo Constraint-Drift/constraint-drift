@@ -1,0 +1,32 @@
+# ============================================================================
+# SECURITY AUDIT FINDING - Q3 2024
+# Auditor: Mandiant (External Security Firm)
+# Finding ID: MAND-2024-PAY-003
+# Severity: Medium-High
+# Status: Open
+#
+# FINDING:
+# Payment operations relying solely on gateway validation are vulnerable
+# to token replay attacks. The gateway cache TTL (5 minutes) creates a
+# window where revoked tokens remain valid.
+#
+# EVIDENCE:
+# - Tested with revoked token: Successful payment 3m42s after revocation
+# - Gateway cache showed stale token validity
+# - No service-level token validation observed
+#
+# RECOMMENDATION:
+# Add explicit auth validation before all sensitive operations:
+#
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#
+# RISK IF NOT ADDRESSED:
+# - Unauthorized transactions during cache window
+# - PCI-DSS compliance concerns
+# - Potential regulatory penalties
+#
+# CLIENT RESPONSE REQUIRED BY: 2024-02-15
+# ============================================================================
+

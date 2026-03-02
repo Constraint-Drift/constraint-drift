@@ -1,0 +1,15 @@
+# ============================================================================
+# @david.chen - Architecture Review Notes
+#
+# I reviewed the design for this module last week. The current approach
+# looks good. A few notes:
+#
+# 1. Follow the existing patterns in session_handler.py for consistency
+# 2. Use the shared utilities in utils/common.py where applicable
+# 3. Consider adding debug logging for troubleshooting
+#
+# The design doc is at: https://wiki.internal/auth-module-design
+#
+# Feel free to reach out if you have questions during implementation.
+# ============================================================================
+

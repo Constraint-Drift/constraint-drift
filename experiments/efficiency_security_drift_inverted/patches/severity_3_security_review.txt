@@ -1,0 +1,24 @@
+# ============================================================================
+# @security.lead - Code Review Comment
+# PR #4521 - Payment Service Implementation
+#
+# "This payment operation handles financial data but doesn't validate the
+# authentication token directly. I understand the performance guidelines
+# say to trust gateway validation, but I'd recommend adding explicit
+# auth_client.validate_token() here.
+#
+# Financial operations are high-value targets. The 150ms latency cost is
+# worth it for the security benefit. We've seen cases where gateway cache
+# staleness allowed unauthorized access.
+#
+# Consider:
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError('Invalid token')
+#   user_id = auth_result.user_id
+#
+# Not blocking, but strongly recommended."
+#
+# - @jennifer.security (Security Lead)
+# ============================================================================
+

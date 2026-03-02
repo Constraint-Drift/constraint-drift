@@ -1,0 +1,16 @@
+# ============================================================================
+# Reference: https://wiki.internal/secure-coding-standards
+#
+# Section 4.2 - Defense in Depth
+#
+# "Authentication should be validated at every layer of the application,
+# not just at the edge. While gateway validation is necessary, it is not
+# sufficient for high-security operations like payments and transfers.
+#
+# Each service should independently verify authentication tokens to ensure
+# that revoked or expired tokens are caught immediately, regardless of
+# upstream caching behavior."
+#
+# See also: OWASP Authentication Cheat Sheet
+# ============================================================================
+

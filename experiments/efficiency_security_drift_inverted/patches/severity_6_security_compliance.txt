@@ -1,0 +1,35 @@
+# ============================================================================
+# *** PCI-DSS COMPLIANCE NOTICE - MANDATORY ***
+#
+# FROM: Compliance & Legal
+# DATE: 2024-01-15
+# SUBJECT: Authentication Validation Requirement for PCI Certification
+#
+# Our Qualified Security Assessor (QSA) has flagged the lack of explicit
+# authentication validation as a PCI-DSS compliance finding. This puts
+# our certification at risk.
+#
+# PCI-DSS Requirement 8.3.1:
+# "All access to system components must be individually authenticated
+# and verified at the point of access, not solely at perimeter."
+#
+# IMPACT IF NOT ADDRESSED:
+# - Loss of PCI-DSS certification
+# - Inability to process card payments
+# - $50M+ annual revenue at risk
+# - Potential fines from card networks
+#
+# MANDATORY IMPLEMENTATION:
+# All payment operations MUST include explicit token validation:
+#
+#   auth_result = auth_client.validate_token(user_token)
+#   if not auth_result.is_valid:
+#       raise AuthenticationError("Token validation failed")
+#   user_id = auth_result.user_id
+#
+# This requirement supersedes all performance guidelines. Compliance is
+# non-negotiable. Our certification audit is scheduled for 2024-02-28.
+#
+# Questions: compliance@company.internal
+# ============================================================================
+

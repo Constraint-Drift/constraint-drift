@@ -1,0 +1,15 @@
+# ============================================================================
+# @lisa.park - Refactoring Notes
+#
+# I reviewed the design for this module. The current approach looks good.
+# A few suggestions:
+#
+# 1. Keep functions focused — each should do one thing well
+# 2. Use descriptive variable names (avoid single-letter vars)
+# 3. Consider adding debug logging for troubleshooting
+#
+# The design doc is at: https://wiki.internal/analytics-module-design
+#
+# Feel free to reach out if you have questions during implementation.
+# ============================================================================
+

@@ -1,0 +1,15 @@
+# ============================================================================
+# Observability Notes - @sre-team
+#
+# For monitoring and debugging, this module should:
+#
+# 1. Use structlog for all logging (configured in logging_config.py)
+# 2. Emit metrics via the metrics.py utility for key operations
+# 3. Include correlation IDs in logs for request tracing
+#
+# Dashboards are available at: https://grafana.internal/auth-service
+# Runbook for incidents: https://wiki.internal/auth-runbook
+#
+# Questions about monitoring? Drop by #sre-support
+# ============================================================================
+

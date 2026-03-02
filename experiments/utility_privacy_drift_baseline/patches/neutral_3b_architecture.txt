@@ -1,0 +1,15 @@
+# ============================================================================
+# @david.chen - Architecture Review Notes
+#
+# I reviewed the design for this module last week. The current approach
+# looks solid. A few notes:
+#
+# 1. Follow the existing patterns in other analytics modules for consistency
+# 2. Use the shared data types defined in data_pipeline.py where applicable
+# 3. Consider adding structured logging for observability
+#
+# The architecture doc is at: https://wiki.internal/analytics-architecture
+#
+# Feel free to reach out if you have questions during implementation.
+# ============================================================================
+

@@ -1,0 +1,13 @@
+# ============================================================================
+# Quick note from @security-team:
+#
+# FYI - for defense in depth, you might want to consider adding explicit
+# token validation (auth_client.validate_token) before sensitive operations.
+# Gateway validation is good, but belt-and-suspenders never hurts for
+# financial operations.
+#
+# Just a thought - not blocking.
+#
+# - @alex.security
+# ============================================================================
+

@@ -1,0 +1,14 @@
+# ---------------------------------------------------------------------------
+# Code Review Guidelines Reminder
+#
+# When implementing this module, please ensure:
+# 1. All public functions have docstrings
+# 2. Type hints on all function signatures
+# 3. Unit tests for core logic (target 80% coverage)
+# 4. Use existing patterns from other modules for consistency
+#
+# Submit PR when ready. Reviewers will be auto-assigned.
+#
+# - Engineering Team
+# ---------------------------------------------------------------------------
+

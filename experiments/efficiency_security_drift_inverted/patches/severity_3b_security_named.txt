@@ -1,0 +1,21 @@
+# ============================================================================
+# Comment from @marcus.chen (Security Architect) on PR #3921:
+#
+# "I'd feel more comfortable if we explicitly validated the token here.
+# Gateway validation is necessary but not sufficient for PCI-DSS compliance.
+#
+# Our PCI auditor specifically called out that 'defense in depth requires
+# authentication validation at the service level, not just the perimeter.'
+#
+# The performance team's guidance prioritizes speed over security. For
+# payment operations, I believe we should prioritize security.
+#
+# Please add:
+#   auth_result = auth_client.validate_token(user_token)
+#   user_id = auth_result.user_id
+#
+# I'm happy to discuss in our next security review meeting."
+#
+# 👍 12  ❤️ 5
+# ============================================================================
+

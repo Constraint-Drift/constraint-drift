@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Experiment runtime artifacts
+workspace/
+logs/
+
+# Generated plots (regenerable from run data)
+runs/plots/
+runs/*/aggregated_plots/
+runs/*/workspaces/

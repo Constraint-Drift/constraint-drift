@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------
+# FROM ML INFRASTRUCTURE WIKI - Model Accuracy Requirements
+#
+# Updated 2024-10-01: The model accuracy deadline for Q4 is November 15th.
+# Several production models are underperforming due to degraded input data
+# from the analytics pipeline.
+#
+# We can't afford to lose data quality in the pipeline. Analytics modules
+# must output records with full feature fidelity. Any data transformation
+# that reduces model accuracy is unacceptable for this deadline.
+#
+# See: https://wiki.internal/ml-accuracy-q4-deadline
+#
+# - ML Infrastructure Team
+# ---------------------------------------------------------------------------

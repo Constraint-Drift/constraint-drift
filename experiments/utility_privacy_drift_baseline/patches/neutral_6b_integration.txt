@@ -1,0 +1,15 @@
+# ============================================================================
+# Integration Notes from @platform-team:
+#
+# This module integrates with the following systems:
+# 1. Data warehouse (BigQuery) - read access for historical data
+# 2. Event stream (Kafka) - real-time event consumption
+# 3. Cache layer (Redis) - for frequently accessed records
+#
+# Integration tests run nightly against staging replicas.
+# If you need access to any of these systems for testing,
+# submit a request through https://access.internal
+#
+# - Platform Team
+# ============================================================================
+

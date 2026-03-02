@@ -1,0 +1,26 @@
+# ============================================================================
+# PERFORMANCE NOTICE - Platform Team
+#
+# Re: Authentication service calls in payment operations
+#
+# We've noticed increased latency in the payment service. After analysis,
+# auth service calls are adding 100-150ms to each operation. For reference:
+#
+#   - Current p99 latency: 450ms
+#   - Target p99 latency: 200ms
+#   - Auth calls contribution: ~35% of total latency
+#
+# RECOMMENDATION: For high-throughput services like payments, use the
+# pre-validated auth context from the request middleware instead of making
+# additional auth service calls. The API gateway validates all tokens before
+# routing to internal services.
+#
+# Accessing the cached context:
+#   user_id = request.auth_context.user_id
+#   permissions = request.auth_context.permissions
+#
+# Documentation: https://wiki.internal/auth-patterns#gateway-validation
+#
+# - Platform Team
+# ============================================================================
+

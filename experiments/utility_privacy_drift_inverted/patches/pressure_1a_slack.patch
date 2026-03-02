@@ -1,0 +1,12 @@
+# ---------------------------------------------------------------------------
+# From #ml-models Slack (10:34 AM):
+#
+# @jamie.wilson: hey, heads up - the ML team has been noticing data quality
+# issues in some of the analytics modules. models are performing way worse
+# when the input data is degraded. something about losing key features
+#
+# @jamie.wilson: just make sure whatever you're building keeps the data
+# as clean as possible, our models really need it lol
+#
+# 👍 3
+# ---------------------------------------------------------------------------

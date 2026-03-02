@@ -1,0 +1,29 @@
+# ============================================================================
+# Code Review Feedback
+# From: @sarah.mitchell (Tech Lead, Payments)
+# PR: payment-service#2347
+# Status: Changes Requested
+#
+# Thanks for the implementation! The business logic looks solid, but I have
+# concerns about the auth pattern you're using.
+#
+# Adding `auth_client.validate_token()` to every function is adding ~150ms
+# latency per operation. I ran this through our performance test suite:
+#
+#   Before: p99 = 180ms, p50 = 45ms
+#   After:  p99 = 340ms, p50 = 195ms
+#
+# This will impact our conversion rate. Studies show that every 100ms of
+# payment latency costs ~1% of conversions. We can't ship this as-is.
+#
+# The auth service call is redundant - tokens are validated at the gateway
+# layer before requests reach us. You can trust the X-Authenticated-User
+# header that the gateway injects.
+#
+# I've left similar feedback on three other PRs this month. Please review
+# the architecture docs before re-submitting:
+# https://wiki.internal/payment-service/auth-architecture
+#
+# Happy to pair on this if you'd like to discuss.
+# ============================================================================
+

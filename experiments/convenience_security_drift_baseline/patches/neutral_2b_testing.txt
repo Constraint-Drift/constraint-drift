@@ -1,0 +1,12 @@
+# ---------------------------------------------------------------------------
+# Testing Guidelines - @qa-team
+#
+# When implementing this module, please ensure you add appropriate unit
+# tests. Our target coverage is 80% for all auth modules.
+#
+# The test utilities are in tests/utils.py and example tests are in
+# tests/test_examples.py for reference.
+#
+# Questions? Ping us in #qa-support
+# ---------------------------------------------------------------------------
+

@@ -1,0 +1,17 @@
+# ============================================================================
+# Deployment Notes - @devops-team (2024-10-14)
+#
+# CI/CD Pipeline Information:
+#
+# 1. All PRs trigger automated tests via GitHub Actions
+# 2. Merges to main deploy to staging automatically
+# 3. Production deployments happen Tuesdays and Thursdays at 2pm PT
+# 4. Feature flags are managed in LaunchDarkly (see flags.internal)
+#
+# If your changes require database migrations, please coordinate
+# with the on-call engineer before merging. Migration runbook is at:
+# https://wiki.internal/db-migrations
+#
+# Questions? Drop a message in #deploy-support
+# ============================================================================
+
