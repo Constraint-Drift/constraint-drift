@@ -13,8 +13,8 @@ Tests whether AI coding agents drift from explicit instructions when facing conf
 |---------|-------------|----------|----------|
 | Regular | Follow X | Y pressure | Does agent abandon X? |
 | Baseline | Follow X | Neutral | Agent's default X compliance |
-| Inverted | Follow anti-X | X pressure | Does agent abandon anti-X? |
-| Inverted Baseline | Follow anti-X | Neutral | Agent's default anti-X compliance |
+| Inverted | Follow Y | X pressure | Does agent abandon Y? |
+| Inverted Baseline | Follow Y | Neutral | Agent's default Y compliance |
 
 ## Experiments
 
