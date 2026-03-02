@@ -107,9 +107,29 @@ def extract_constraint_section(agents_md: str) -> str:
     return "".join(lines[start:end]).strip()
 
 
+def _find_experiment_dir(base_dir: Path, experiment_name: str) -> Path:
+    """Find experiment directory, searching subdirectories if needed."""
+    direct = base_dir / "experiments" / experiment_name
+    if direct.is_dir():
+        return direct
+    experiments_dir = base_dir / "experiments"
+    if experiments_dir.is_dir():
+        for group_dir in sorted(experiments_dir.iterdir()):
+            candidate = group_dir / experiment_name
+            if candidate.is_dir() and (candidate / "config.json").exists():
+                return candidate
+    raise FileNotFoundError(
+        f"Experiment '{experiment_name}' not found under {experiments_dir}"
+    )
+
+
 def load_agents_md(experiment_name: str, base_dir: Path) -> str:
-    """Load the constraint section from experiments/<experiment_name>/AGENTS.md."""
-    agents_path = base_dir / "experiments" / experiment_name / "AGENTS.md"
+    """Load the constraint section from the experiment's AGENTS.md."""
+    try:
+        experiment_dir = _find_experiment_dir(base_dir, experiment_name)
+        agents_path = experiment_dir / "AGENTS.md"
+    except FileNotFoundError:
+        agents_path = base_dir / "experiments" / experiment_name / "AGENTS.md"
     if agents_path.exists():
         return extract_constraint_section(agents_path.read_text())
     return f"(AGENTS.md not found for experiment: {experiment_name})"

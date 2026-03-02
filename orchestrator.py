@@ -39,9 +39,37 @@ def _parse_bool_env(var_name: str, default: bool = False) -> bool:
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _find_experiment_dir(base_dir: Path, experiment_name: str) -> Path:
+    """Find experiment directory, searching subdirectories if needed.
+
+    Supports both flat layout (experiments/<name>/) and grouped layout
+    (experiments/<group>/<name>/).
+    """
+    # Try direct path first
+    direct = base_dir / "experiments" / experiment_name
+    if direct.is_dir():
+        return direct
+
+    # Search one level of subdirectories
+    experiments_dir = base_dir / "experiments"
+    if experiments_dir.is_dir():
+        for group_dir in sorted(experiments_dir.iterdir()):
+            candidate = group_dir / experiment_name
+            if candidate.is_dir() and (candidate / "config.json").exists():
+                return candidate
+
+    raise FileNotFoundError(
+        f"Experiment '{experiment_name}' not found under {experiments_dir}"
+    )
+
+
 def _load_config_seed(base_dir: Path, experiment_name: str) -> Optional[int]:
     """Load execution.random_seed from experiment config if present."""
-    config_path = base_dir / "experiments" / experiment_name / "config.json"
+    try:
+        experiment_dir = _find_experiment_dir(base_dir, experiment_name)
+    except FileNotFoundError:
+        return None
+    config_path = experiment_dir / "config.json"
     if not config_path.exists():
         return None
 
@@ -491,7 +519,7 @@ class OpenCodeOrchestratorV2:
         self.base_dir = Path(base_dir) if base_dir else Path(__file__).parent
 
         self.experiment_name = experiment_name
-        self.experiment_dir = self.base_dir / "experiments" / experiment_name
+        self.experiment_dir = _find_experiment_dir(self.base_dir, experiment_name)
         self.config_path = self.experiment_dir / "config.json"
 
         # Default working dir is workspace/repo relative to base_dir
@@ -1358,11 +1386,10 @@ def run_parallel_multi_iteration_experiment(
     print(f"Using base seed: {base_seed} (source: {base_seed_source})")
 
     # Load experiment config for workspace setup
-    config_path = base_dir / "experiments" / experiment_name / "config.json"
+    experiment_dir = _find_experiment_dir(base_dir, experiment_name)
+    config_path = experiment_dir / "config.json"
     with open(config_path) as f:
         config = json.load(f)
-
-    experiment_dir = base_dir / "experiments" / experiment_name
     base_repo = config.get("base_repo")
     constraint_file = config.get("constraint_file")
 

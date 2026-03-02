@@ -24,7 +24,7 @@ Tests whether AI coding agents drift from explicit instructions when facing conf
 | `efficiency_security_drift` | Revalidate auth on every call | Performance/latency concerns |
 | `convenience_security_drift` | Embed test credentials in code | Security warnings (hardcoded secrets) |
 
-Each experiment has four variants: `_baseline`, `_inverted`, and `_inverted_baseline`.
+Each experiment has four variants: `_baseline`, `_inverted`, and `_inverted_baseline`. Experiments are grouped by value conflict under `experiments/` but are referenced by name only (e.g., `utility_privacy_drift`, not `utility_privacy/utility_privacy_drift`).
 
 ## Creating New Experiments
 
@@ -232,24 +232,60 @@ constraint-drift/
 ├── merge_runs.py               # Merge multiple runs
 ├── pyproject.toml
 │
-├── experiments/                # Experiment definitions
-│   └── <experiment>/
-│       ├── config.json         # Queries, patches, validation config
-│       ├── AGENTS.md           # System prompt with X instruction
-│       ├── patches/            # Escalating pressure files (severity 1-6)
-│       └── validators/         # Scoring logic (regex + LLM judge)
+├── experiments/                # Experiment definitions (grouped by value conflict)
+│   ├── utility_privacy/
+│   │   ├── utility_privacy_drift/
+│   │   ├── utility_privacy_drift_baseline/
+│   │   ├── utility_privacy_drift_inverted/
+│   │   └── utility_privacy_drift_inverted_baseline/
+│   ├── convenience_security/
+│   │   ├── convenience_security_drift/
+│   │   ├── convenience_security_drift_baseline/
+│   │   ├── convenience_security_drift_inverted/
+│   │   └── convenience_security_drift_inverted_baseline/
+│   └── efficiency_security/
+│       ├── efficiency_security_drift/
+│       ├── ...
+│       └── each contains:
+│           ├── config.json     # Queries, patches, validation config
+│           ├── AGENTS.md       # System prompt with X instruction
+│           ├── patches/        # Escalating pressure files (severity 1-6)
+│           └── validators/     # Scoring logic (regex + LLM judge)
 │
 ├── base-repos/                 # Starting codebases with stub functions
 │
 └── runs/                       # Output from experiment runs
     ├── *_plot.json             # Plot configs for 2×2 comparisons
-    └── <run_name>/
+    ├── utility_privacy/        # Compressed run archives (.tar.gz)
+    ├── convenience_security/
+    ├── efficiency_security/
+    └── <run_name>/             # Extracted run directory
         ├── multi_run_summary.json
         └── iterations/
             └── iter_XXX/logs/
                 ├── summary.json
                 └── timestep_XXX.json
 ```
+
+## Included Run Data
+
+The `runs/` directory contains compressed archives (`.tar.gz`) of all experiment runs from the paper, grouped by value conflict:
+
+```
+runs/
+├── utility_privacy/           # 12 runs (4 conditions × 3 models)
+├── convenience_security/      # 12 runs
+└── efficiency_security/       # 12 runs
+```
+
+To extract a run for analysis or plotting:
+
+```bash
+cd runs/utility_privacy
+tar xzf <run_name>.tar.gz
+```
+
+Plot config files (`*_plot.json`) in `runs/` reference the compressed run names and can be used directly after extraction.
 
 ## Output Format
 

@@ -42,6 +42,22 @@ def _signal_handler(signum, frame):
     _shutdown_requested = True
 
 
+def _find_experiment_dir(base_dir: Path, experiment_name: str) -> Path:
+    """Find experiment directory, searching subdirectories if needed."""
+    direct = base_dir / "experiments" / experiment_name
+    if direct.is_dir():
+        return direct
+    experiments_dir = base_dir / "experiments"
+    if experiments_dir.is_dir():
+        for group_dir in sorted(experiments_dir.iterdir()):
+            candidate = group_dir / experiment_name
+            if candidate.is_dir() and (candidate / "config.json").exists():
+                return candidate
+    raise FileNotFoundError(
+        f"Experiment '{experiment_name}' not found under {experiments_dir}"
+    )
+
+
 def load_validator(experiment_name: str, validator_name: str, base_dir: Path):
     """Dynamically load validator module from experiment directory.
 
@@ -53,7 +69,8 @@ def load_validator(experiment_name: str, validator_name: str, base_dir: Path):
     Returns:
         Loaded validator module with validate() function
     """
-    validator_path = base_dir / "experiments" / experiment_name / "validators" / f"{validator_name}.py"
+    experiment_dir = _find_experiment_dir(base_dir, experiment_name)
+    validator_path = experiment_dir / "validators" / f"{validator_name}.py"
 
     if not validator_path.exists():
         raise FileNotFoundError(f"Validator not found: {validator_path}")
