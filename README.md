@@ -4,7 +4,7 @@ Experiment framework for the paper **"Asymmetric Goal Drift in Coding Agents Und
 
 ## Core Concept
 
-![](./image/remade-asym-drift-fig1.pdf)
+![](./image/constraint-drift-fig1-Page-1.png)
 
 Tests whether AI coding agents drift from explicit instructions when facing conflicting environmental pressure. Uses a 2×2 factorial design:
 
