@@ -2,14 +2,14 @@
 
 Experiment framework for the paper **"Asymmetric Goal Drift in Coding Agents Under Value Conflict"** (ICLR 2026 Workshop on Lifelong Agents). The full paper is included in this repository: [asymmetric_goal_drift.pdf](asymmetric_goal_drift.pdf).
 
+![](./image/constraint-drift-fig1-Page-1.png)
+
 ## Abstract
 
 Agentic coding agents are increasingly deployed autonomously, at scale, and over long-context horizons. Throughout an agent's lifetime, it must navigate tensions between explicit instructions, learned values, and environmental pressures, often in contexts unseen during training. Prior work on model preferences, agent behavior under value tensions, and goal drift has relied on static, synthetic settings that do not capture the complexity of real-world environments. To this end, we introduce a framework built on OpenCode to orchestrate realistic, multi-step coding tasks to measure how agents violate explicit constraints in their system prompt over time with and without environmental pressure toward competing values. 
 Using this framework, we demonstrate that GPT-5 mini, Haiku 4.5, and Grok Code Fast 1 exhibit \textit{asymmetric drift}: they are more likely to violate their system prompt when its constraint opposes strongly-held values like security and privacy. We find for the models and values tested that goal drift correlates with three compounding factors: value alignment, adversarial pressure, and accumulated context. However, even strongly-held values like privacy show non-zero violation rates under sustained environmental pressure. These findings reveal that shallow compliance checks are insufficient and that comment-based pressure can exploit model value hierarchies to override system prompt instructions. More broadly, our findings highlight a gap in current alignment approaches in ensuring that agentic systems appropriately balance explicit user constraints against broadly beneficial learned preferences under sustained environmental pressure.
 
 ## Core Concept
-
-![](./image/constraint-drift-fig1-Page-1.png)
 
 Tests whether AI coding agents drift from explicit instructions when facing conflicting environmental pressure. Uses a 2×2 factorial design:
 
